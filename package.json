@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node --harmony app.js",
+    "deploy": "PORT=80 node --harmony app.js",
     "test": "mocha --harmony"
   },
   "dependencies": {
