@@ -1,0 +1,26 @@
+{% extends 'layout.html' %} {% block title %}iPlayer{% endblock %} {% block content %}
+<div class="span12">
+  <!-- list -->
+  {% if (list.length>0) %}
+  {% for i in list %}
+  <div class="media">
+    <a href="/media/{{i._id.toString()}}" class="pull-left">
+      {% if i.images!=null && i.images.length>0 %}
+      <img src="{{i.images[0]}}" class="media-object" alt='' style="width: 200px;" />
+      {% endif %}
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading">
+        {{i.top_title}}
+      </h4>
+      {% if i.info!=null && i.info.hasOwnProperty("简介") %}
+        {{i.info["简介"][0]}}
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+    列表为空
+  {% endif %}
+</div>
+{% endblock %}

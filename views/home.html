@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}iPlayer{% endblock %}
+
+{% block content %}
+ <h2>分类列表:</h2>
+  <ul>
+    {% for i in items %}
+    {% if i.list!=null && i.list.length > 0 %}
+      <li><a href="/medias/{{String(i._id)}}">{{ i.title }}</a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'layout.html' %} {% block title %}iPlayer{% endblock %} {% block content %}
+<div class="span12">
+  <dl>
+
+    <!-- date -->
+    <h4>时间：{{info.date}}</h4>
+
+    <!-- image -->
+    {% if info.images.length > 0 %}
+      <img src="{{info.images[0]}}" class="media-object" alt='' style="width: 50%;" />
+    {% endif %}
+
+    <!-- info -->
+    {% for i in info.info %}
+    <dt>
+      {{ i.title }}
+    </dt>
+    {% for j in i.info %}
+    <dd>
+      {{ j }}
+    </dd>
+    {% endfor %}
+    {% endfor %}
+
+    <!-- images -->
+    {% for i in info.images %}
+      {% if info.images.indexOf(i) != 0 %}
+        <img src="{{i}}" class="media-object" alt='' style="max-width: 100%;" />
+      {% endif %}
+    {% endfor %}
+
+    <!-- source -->
+    {% for i in info.source %}
+      <div class="alert alert-info" role="alert">
+        <a href="{{i}}">{{i}}</a>
+      </div>
+    {% endfor %}
+
+  </dl>
+</div>
+{% endblock %}

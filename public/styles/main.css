@@ -1,0 +1,10 @@
+ul {
+	margin: 10px auto 0;
+	list-style: none;
+	font: 20px helvetica;
+	font-weight: 100px;
+}
+
+li {
+  margin-bottom: 10px;
+}

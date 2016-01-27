@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{% block title %}iPlayer{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="/lib/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="/lib/bootstrap-theme.min.css">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="/lib/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<!-- 激活爬虫按钮 -->
+	<a href="/"><button class="btn" type="button">Home</button></a>
+	<form action="/crawler" method="post">
+		<input type="submit" value="网络爬虫!(更新数据)" />
+	</form>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<form class="form-horizontal" action="/search">
+					<div class="control-group">
+						<div class="controls">
+							<input name="q" type="text" placeholder="请输入搜搜" />
+							<button type="submit" class="btn btn-primary">搜索</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- content -->
+	<div class="container-fluid">
+		<div class="row-fluid">
+			{% block content %}
+			<p>Forgot to add content?</p>
+			{% endblock %}
+		</div>
+	</div>
+
+	<!-- TalkingData -->
+	<script src="http://sdk.talkingdata.com/app/h5/v1?appid=734276F2EBA6973B085E71047B8BFDA9&vn=0.1.0&vc=1"></script>
+
+</body>
+
+</html>
